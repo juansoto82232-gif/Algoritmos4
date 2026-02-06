@@ -1,0 +1,10 @@
+comandos 
+pwd=saber donde estoy parado
+ls=muestra las carpetas
+cd=moverse entre carpetas 
+cd ..=volver afuera 
+mkdir=crear carpeta
+git status=muestra los archivos que cambiaron
+git add=para añadir los archivos que quiero con push
+git commin-m=comentarios prerpara los archivos en el add para subirlos a git 
+git push origin main=subir todos los add 
