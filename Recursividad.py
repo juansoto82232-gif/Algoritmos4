@@ -10,3 +10,8 @@ def factorial(n):
         resultado = resultado * i
     return resultado
 print(factorial(5))
+def fibonacci(n):#no funciona o se demora bastante con numeros grandes
+    if n<=1:
+        return n
+    return fibonacci(n-1)+ fibonacci(n-2)
+print(fibonacci(7))    
