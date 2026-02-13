@@ -6,6 +6,10 @@
 #me muestre la lista de las canciones
 # cual esta sonando en ese momento
 
+from asyncio.windows_events import NULL
+from gettext import NullTranslations
+
+
 class NodoDoble:
 	#Nodo para lista simplemente enlazada
 
@@ -44,7 +48,7 @@ class ListaDoble:
 
 	def insertar_final(self, dato, segundos):
 		#Inserta un elemento al inicio de la lista
-		nuevo = NodoDoble(dato) 
+		nuevo = NodoDoble(dato,segundos) 
 
 		if self.esta_vacia():
 			self.cabeza = nuevo
@@ -68,7 +72,7 @@ class ListaDoble:
 			self.cola = None
 		else:
 			self.cabeza = self.cabeza.siguiente
-			self.cabeza.anterior = none
+			self.cabeza.anterior = None
 
 		return dato #opcional
 
@@ -151,21 +155,20 @@ class ListaDoble:
 		return " <-> ".join(elementos)
 
 
-	def Cancion_Siguiente(self):
+	def Cancion_Siguiente_O_Anterior(self):
 		if self.esta_vacia():
 			return "Lista de reproduccion Vacia"
 
-		actual = self.reproductor
-		
-		self.siguiente = 
+		actual= self.reproductor
 
+		self.reproductor=actual.siguiente
 
 #Interfaz
 
 def Esta_Sonando(cancion):
 	print("==================================")
 	print("Estas escuchando:", cancion)
-	print("<- (a) Cancion Anterior | (s) Cancion siguiente ->")
+	print("<- (9) Cancion Anterior | (0) Cancion siguiente ->")
 	print("==================================")
 
 
@@ -191,17 +194,16 @@ if __name__ == "__main__": #opcional
 
 		if opcion == 1:			
 			cancion = input("Ingrese el nombre de la cancion:")
-			segundos = input("Ingrese el los segundos de la cancion:")
-
-			canciones.insertar_inicio(cancion, segundos)
+			segundos = input("Ingrese los segundos de la cancion:")
+			canciones.insertar_final(cancion, segundos)
 
 		elif opcion == 2:
-			print(canciones)
+			print(canciones)	
 
-		elif opcion == 3:
+		elif opcion == 5:
+			cancion=input("Ingrese el nombre de la cancion que desea eliminar:")
+			canciones.eliminar_inicio()
+			canciones.buscar()
+			canciones.eliminar_final()		
 			
-
-
-		
-
 	

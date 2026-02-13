@@ -11,4 +11,4 @@ git push origin main=subir todos los add
 git rm= borra archivos
 git mv=mover o renombrar archivos
 python es lenguaje tipado dinámico=la variable se adapta segun el tipo de dato que le pasemos
-python es un lenguaje orientado a objetos 
+python es un lenguaje orientado a objetos     
