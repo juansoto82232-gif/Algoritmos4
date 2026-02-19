@@ -192,7 +192,7 @@ if __name__ == "__main__": #opcional
 		opcion = int(input("Ingrese su opcion:"))
 
 
-		if opcion == 1:			
+		"""if opcion == 1:			
 			cancion = input("Ingrese el nombre de la cancion:")
 			segundos = input("Ingrese los segundos de la cancion:")
 			canciones.insertar_final(cancion, segundos)
@@ -204,6 +204,7 @@ if __name__ == "__main__": #opcional
 			cancion=input("Ingrese el nombre de la cancion que desea eliminar:")
 			canciones.eliminar_inicio()
 			canciones.buscar()
-			canciones.eliminar_final()		
+			canciones.eliminar_final()"""		
+			
 			
 	

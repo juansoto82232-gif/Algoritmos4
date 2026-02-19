@@ -5,4 +5,3 @@ class Estudiante:
 estudiante1=Estudiante("Juan",123)
 print(estudiante1.nombre)        
 
-

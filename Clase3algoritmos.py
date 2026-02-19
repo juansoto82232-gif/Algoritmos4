@@ -81,3 +81,25 @@
 #     return es_palindromo_n(palabra, inicio + 1, fin - 1)
 
 #  ------------ Recursividad en listas --------------
+class lista:
+    def __init__(self,dato):
+        self.cabeza=None
+    ##def sumar(self, nodo=None):
+
+    def agregar(self):
+        nuevo=Nodo(dato)
+        if not self.cabeza:
+            self.cabeza=nuevo
+        else:
+            actual=self.cabeza
+            while actual.siguiente !=None:
+                actual=actual.siguiente
+            actual.siguiente=nuevo
+    def buscar(self,nodo=None,dato,primera_llamada=True):
+        if primera_llamada:
+            nodo=self.cabeza
+        if nodo is None:
+            return False
+        if nodo.dato==dato:
+            return True
+        return buscar(nodo.siguiente,dato,False)                           
