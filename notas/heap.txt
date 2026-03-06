@@ -1,0 +1,4 @@
+heapq.heappushpop=agrega un elemento y a la vez extrae un elemento
+heapq.heappop=extrae un elemento
+heapq.heappush=agrega un elemento
+heapq.heappeek=muestra el tope 
