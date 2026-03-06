@@ -53,3 +53,31 @@ print(f"Siguiente paciente a atender: {siguiente.nombre} con prioridad {siguient
 siguiente= hospital.siguiente_paciente()
 print(f"Siguiente paciente a atender: {siguiente.nombre} con prioridad {siguiente.prioridad}")
 '''
+#otra forma
+#---------------------------------------------
+'''
+import heapq
+
+hospital = []
+turno = 0
+
+n = int(input("Cuántos pacientes desea ingresar? "))
+
+for i in range(n):
+    nombre = input(f"Nombre del paciente {i+1}: ")
+    prioridad = int(input(f"Prioridad del paciente {i+1} (1-3): "))
+    
+    heapq.heappush(hospital, (prioridad, turno, nombre))
+    turno += 1
+
+print("\nPacientes en orden de atención:")
+
+while hospital:
+    prioridad, turno, nombre = heapq.heappop(hospital)
+    print("Paciente:", nombre)
+    print("Prioridad:", prioridad)
+'''
+#Un programa que me permita progrmar tareas y me diga
+#cual es la siguiente tarea a realizar segun el calendario
+#---------------------------------------------------
+from datetime import datetime, timedelta    
