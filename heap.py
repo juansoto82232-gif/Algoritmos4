@@ -1,5 +1,5 @@
 #código para organizar números en orden por orden de prioridad
-'''
+
 datos = [5, 3, 8, 1, 2, 9, 4]
 import heapq
 from sys import _debugmallocstats
@@ -76,8 +76,34 @@ while hospital:
     prioridad, turno, nombre = heapq.heappop(hospital)
     print("Paciente:", nombre)
     print("Prioridad:", prioridad)
-'''
+
 #Un programa que me permita progrmar tareas y me diga
 #cual es la siguiente tarea a realizar segun el calendario
 #---------------------------------------------------
-from datetime import datetime, timedelta    
+from datetime import datetime, timedelta
+    
+tareas = []
+heapq.heapify(tareas)
+
+hoy=datetime.now()#coge la fecha actual del computador
+while True:
+    linea = input("tarea:")
+    if linea.lower() =="fin":
+        break
+    partes =linea.split(maxsplit=1)
+    if len(partes) != 2:
+        print("Entrada no válida. Use el formato: 'YYYY-MM-DD tarea'")
+        continue
+    dias = int(partes[0])
+    descripcion = partes[1]
+    fecha_ejecucion = hoy + timedelta(days=dias)
+    heapq.heappush(tareas, (fecha_ejecucion, descripcion))
+print(f"Tareas en el heap:", tareas)
+
+print("Orden de ejecución de las tareas segun calendario: ")
+while tareas:
+    fecha, tarea = heapq.heappop(tareas)
+    dias_restantes = (fecha - hoy).days
+    print(f" en {dias_restantes} días: {tareas}")
+    
+print("No hay más tareas programadas.")
